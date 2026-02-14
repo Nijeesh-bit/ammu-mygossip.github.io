@@ -442,6 +442,12 @@
         let autoplayInterval = null;
         const AUTOPLAY_MS = 4200;
 
+        function updateProgress() {
+            const percent = ((currentQuestion) / questions.length) * 100;
+            const el = document.getElementById('progress');
+            if (el) el.style.width = percent + '%';
+        }
+
         // Embedded list of local images from the `images/` folder.
         // This list was populated from the workspace so the page can use local files
         // even when directory listing via fetch() isn't available.
